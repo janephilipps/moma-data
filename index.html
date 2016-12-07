@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,11 +41,12 @@
                 })
                 .sort(null);
 
-            d3.csvParseRows('artist-gender-data.csv', function(error, dataset) {
+            var csv = 'artist-gender-data.csv';
+
+            d3.csv(csv, function(error, dataset) {
                 if (error) {
                     console.log(error);
                 }
-                console.log('dataset', dataset);
                 dataset.forEach(function(d) {
                     d.count = +d.count;
                 });
