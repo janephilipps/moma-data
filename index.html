@@ -22,7 +22,10 @@
             var radius = Math.min(width, height) / 2;
 
             // Defines color scale - if more than 20 entries in dataset, colors will be reused
-            var color = d3.scaleOrdinal(d3.schemeCategory20b);
+            // var color = d3.scaleOrdinal(d3.schemeCategory20b);
+
+            var color = d3.scaleOrdinal()
+                .range(['blue', 'pink']);
 
             // Define svg
             var svg = d3.select('#chart')
