@@ -1,6 +1,11 @@
 (function(d3) {
     'use strict'
 
+    var dataset = [
+        { label: 'Male', count: 1000 },
+        { label: 'Female', count: 100 }
+    ];
+
     var width = 360;
     var height = 360;
     var radius = Math.min(width, height) / 2;
@@ -29,17 +34,7 @@
         })
         .sort(null);
 
-    var csv = 'artist-gender-data.csv';
-
-    d3.csv(csv, function(error, dataset) {
-        if (error) {
-            console.log(error);
-        }
-        dataset.forEach(function(d) {
-            d.count = +d.count;
-        });
-
-        var path = svg.selectAll('path')
+    var path = svg.selectAll('path')
             .data(pie(dataset))
             .enter()
             .append('path')
@@ -47,6 +42,25 @@
             .attr('fill', function(d, i) {
                 return color(d.data.label);
             });
-    })
+
+    // var csv = 'static/artist-gender-data.csv';
+
+    // d3.csv(csv, function(error, dataset) {
+    //     if (error) {
+    //         console.log(error);
+    //     }
+    //     dataset.forEach(function(d) {
+    //         d.count = +d.count;
+    //     });
+
+    //     var path = svg.selectAll('path')
+    //         .data(pie(dataset))
+    //         .enter()
+    //         .append('path')
+    //         .attr('d', arc)
+    //         .attr('fill', function(d, i) {
+    //             return color(d.data.label);
+    //         });
+    // })
 
 })(window.d3);
