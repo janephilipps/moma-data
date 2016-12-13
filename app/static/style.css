@@ -1,0 +1,14 @@
+* {
+    font-family: Futura, sans-serif;
+    font-size: 100%;
+}
+
+.chart__title {
+    font-size: 150%;
+    text-align: center;
+    margin: 20px;
+}
+
+#chart {
+    text-align: center;
+}
