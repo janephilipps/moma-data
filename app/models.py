@@ -1,16 +1,5 @@
 from django.db import models
 
-# Create your models here.
-# ConstituentID => number --> INT
-# DisplayName => string --> CHAR(NUM)
-# ArtistBio => textfield --> TEXT
-# Nationality => string --> CHAR(NUM)
-# Gender => string --> CHAR(NUM)
-# BeginDate => number --> SMALLINT
-# EndDate => number --> SMALLINT
-# Wiki QID => string --> CHAR(NUM)
-# ULAN => string --> CHAR(NUM)
-
 class Artist(models.Model):
     GENDER_CHOICES = (
         ('M', 'Male'),
@@ -25,3 +14,17 @@ class Artist(models.Model):
     end_date = models.IntegerField(null=True)
     wiki_qid = models.CharField(max_length=255)
     ulan = models.CharField(max_length=255)
+
+# Get data from DB
+male = 0
+female = 0
+
+for a in Artist.objects.all():
+    print(a.gender)
+    if a.gender == 'M':
+        male += 1
+    elif a.gender == 'F':
+        female += 1
+
+print('M', male)
+print('F', female)
