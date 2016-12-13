@@ -11,12 +11,12 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'django_db',
-    #     'USER': 'root',
-    #     'PASSWORD': '',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'moma_data',
+        'USER': 'root',
+        'PASSWORD': '',
+    }
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'app',
+    'south',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
