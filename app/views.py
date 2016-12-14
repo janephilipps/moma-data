@@ -23,7 +23,7 @@ def get_genders(artists):
         elif a.gender == 'F':
             female += 1
 
-    return {'gender': {'male': male, 'female': female}}
+    return {'gender': [{'label': 'male', 'count': male},{'label':'female', 'count': female}]}
 
 response = get_genders(artists)
 

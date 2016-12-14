@@ -34,7 +34,7 @@
     }).done(function(data) {
 
         var path = svg.selectAll('path')
-            .data(pie(data))
+            .data(pie(data.gender))
             .enter()
             .append('path')
             .attr('d', arc)
