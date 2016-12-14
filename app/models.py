@@ -14,17 +14,3 @@ class Artist(models.Model):
     end_date = models.IntegerField(null=True)
     wiki_qid = models.CharField(max_length=255)
     ulan = models.CharField(max_length=255)
-
-# Get data from DB
-male = 0
-female = 0
-
-for a in Artist.objects.all():
-    print(a.gender)
-    if a.gender == 'M':
-        male += 1
-    elif a.gender == 'F':
-        female += 1
-
-print('M', male)
-print('F', female)
